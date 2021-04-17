@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <h1 id="header">Pathways</h1>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <div id="tools"> 
+      <ul>
+       <li id="forum" onclick="Forum()">MyRoute</li>
+       <li id="loginpage" onclick="login()" >Login</li>
+       <li id="save" onclick="save()" >Save</li>
+      </ul>
+    </div>
+
+
+    <div id ="postForum"> 
+      <br>
+      <h1>MyRoute</h1>
+      <br>
+      <button onclick="addelement()">Add Item</button>
+      <button type="button" id="cancelbtn" onclick="exitPopup()">Cancel</button>
+      <br/>
+      
+      <div id="thelist">
+     
+      </div>
+    </div>
+
+    <div id ="savePopup"> 
+      <br><br><br>
+      Would you like to save the route?
+      <br><br><br>
+      <button onclick="saveRoute()">Yes</button>
+      <button onclick="exitPopup()">No</button>
+    </div>
+
+
+
+    <div id ="login"> 
+      <br><br><br>
+      <h1>Login</h1>
+      <br><br><br>
+      <input id ="username" type="text" placeholder="email"><br><br>
+      <input id = "password" type="password" placeholder="Password"><br><br>
+      <button type="button" id="cancelbtn" onclick="exitPopup()">Cancel</button>
+      <button type="button" id="loginbtn" onclick="userLogin()">login</button><br><br>
+      <button type="submit" id="signupbtn" onclick="signup()">Sign Up</button>
+    </div>
+    <div id ="signup"> 
+      <br><br><br>
+      <h1>Sign Up</h1>
+      <br><br><br>
+      <input id ="nickname" type="text" placeholder="Username"><br><br>
+      <input id ="singunpName" type="text" placeholder="email"><br><br>
+      <input id = "signupPassword" type="password" placeholder="Password"><br><br>
+      <button type="button" id="cancelbtn" onclick="exitPopup()">Cancel</button>
+      <button type="submit" id="signupbtn"  onclick="userSignup()" >Sign Up</button>
+    </div>
+    <div id ="logout"> 
+      <br><br><br>
+      <h1>Logout</h1>
+      <br><br><br>
+      <button type="button" id="logoutbtn"  onclick="signOut()" >logout</button>
+    </div>
+    
+    <div id="map"> </div>
+
+    <div style="height: 10px;"></div>
+    <div style="text-align: center;">
+      <button onclick="chi()">
+        finish
+      </button>
+  <div id="select">
+        <select id="mySelect">
+          <option>Walking</option>
+          <option>Jogging</option>
+        </select>
+        <button onclick="travelType()">change</button>
+      </div>
+    </div>
+    <div style="height: 50px;text-align: center;" id="tdd"></div>
+
+    <div id="overlay"></div>
+    <script src="jquery-2.2.4.min.js"></script>
+
+<!--AIzaSyC0zYIF_sKSgYv0SmJw3KetAz0vNAnp3B4-->
+<!--AIzaSyBiQShUsVBUWvgaHHSHS1diWf4Be5LNH14       mine-->
+<script defer 
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBiQShUsVBUWvgaHHSHS1diWf4Be5LNH14&callback=initMap">
+    </script>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-auth.js"></script>
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-analytics.js"></script>
+    <script>
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      var firebaseConfig = {
+        apiKey: "AIzaSyCVxRKrecRyDHiQQsGi5uM6MCykCsYfIgA",
+        authDomain: "pathways-e0c36.firebaseapp.com",
+        databaseURL: "https://pathways-e0c36.firebaseio.com",
+        projectId: "pathways-e0c36",
+        storageBucket: "pathways-e0c36.appspot.com",
+        messagingSenderId: "187649448352",
+        appId: "1:187649448352:web:96cf0900e93a773c212cc5",
+        measurementId: "G-C6LRGNDNEN"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+    </script>
+    
+  </body>
+</html>
+
